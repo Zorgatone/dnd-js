@@ -1,0 +1,15 @@
+{
+  "short_name": "D&D JS",
+  "name": "D&D JS stuff",
+  "icons": [],
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#FFFFFF",
+  "scope": "/",
+  "theme_color": "#FFFFFF",
+  "shortcuts": [],
+  "description": "Dungeons & Dragons shenanigans",
+  "screenshots": [],
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone"
+}

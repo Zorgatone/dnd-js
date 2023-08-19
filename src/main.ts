@@ -1,26 +1,17 @@
-import "./style.scss";
-import typescriptLogo from "./typescript.svg";
-import viteLogo from "/vite.svg";
-import { setupCounter } from "./counter.ts";
+import backgroundWebWorker from "./worker/background?worker&url";
+import serviceWorker from "./worker/service?worker&url";
 
-console.log(viteLogo);
+const serviceWorkerEnabled: boolean = false;
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`;
+if (serviceWorkerEnabled && "serviceWorker" in navigator) {
+  navigator.serviceWorker.register(serviceWorker, { type: "module" });
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+console.log(backgroundWebWorker, import.meta.url);
+const w = new Worker(new URL(backgroundWebWorker, import.meta.url), {
+  type: "module",
+});
+
+console.log("Hello, Vite!");
+
+w.postMessage("testStorage");
