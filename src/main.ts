@@ -1,6 +1,12 @@
 import backgroundWebWorker from "./worker/background?worker&url";
 import serviceWorker from "./worker/service?worker&url";
 
+// import {} from 'snarkdown'
+// import {} from 'xss'
+// import {} from 'idb'
+// import {} from 'redaxios'
+// import {} from 'preact'
+
 const serviceWorkerEnabled: boolean = false;
 
 if (serviceWorkerEnabled && "serviceWorker" in navigator) {

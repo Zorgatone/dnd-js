@@ -33,5 +33,12 @@
   "volta": {
     "node": "20.5.1",
     "npm": "9.8.1"
+  },
+  "dependencies": {
+    "idb": "^7.1.1",
+    "preact": "^10.17.1",
+    "redaxios": "^0.5.1",
+    "snarkdown": "^2.0.0",
+    "xss": "^1.0.14"
   }
 }
